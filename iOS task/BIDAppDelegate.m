@@ -7,15 +7,27 @@
 //
 
 #import "BIDAppDelegate.h"
+#import "BIDViewController.h"
 
 @implementation BIDAppDelegate
-
+@synthesize obj;
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    
     self.window.backgroundColor = [UIColor whiteColor];
+    
+    obj =  [[BIDViewController alloc]init];
+
+        self.window.rootViewController = self.obj;
+
     [self.window makeKeyAndVisible];
+//
+    [self.window addSubview:obj.view];
+
+    
     return YES;
 }
 
